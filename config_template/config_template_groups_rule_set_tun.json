@@ -127,7 +127,6 @@
       "tag":"Github",
       "type":"selector",
       "outbounds":[ 
-        "IEPL",
         "HongKong",
         "TaiWan",
         "Singapore",
