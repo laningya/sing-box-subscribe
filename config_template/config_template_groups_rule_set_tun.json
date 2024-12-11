@@ -457,7 +457,8 @@
       {
         "domain_suffix": [
         "redotpay.com",
-        "nodeseek.com"
+        "nodeseek.com",
+        "v2rayssr.com"
         ],
         "outbound": "Proxy"
       },
