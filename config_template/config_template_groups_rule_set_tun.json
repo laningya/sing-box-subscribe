@@ -313,6 +313,15 @@
       ]
     },
     {
+      "tag":"Magpie",
+      "type":"selector",
+      "outbounds":[
+        "{all}",
+        "auto",
+        "direct"
+      ]
+    },
+    {
       "tag":"China",
       "type":"selector",
       "outbounds":[
@@ -458,11 +467,16 @@
         "domain_suffix": [
         "redotpay.com",
         "nodeseek.com",
-        "v2rayssr.com",
+        "v2rayssr.com"
+        ],
+        "outbound": "Proxy"
+      },
+      {
+        "domain_suffix": [
         "023168.xyz",
         "bbbbbb.eu.org"
         ],
-        "outbound": "Proxy"
+        "outbound": "Magpie"
       },
       {
         "ip_cidr": [
@@ -471,7 +485,7 @@
           "2606:4700:3032::6815:1886/128",
           "2606:4700:3037::ac43:daf3/128"
         ],
-        "outbound": "Proxy"
+        "outbound": "Magpie"
       },
       {
         "domain": [
