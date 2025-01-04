@@ -458,7 +458,15 @@
         "domain_suffix": [
         "redotpay.com",
         "nodeseek.com",
-        "v2rayssr.com"
+        "v2rayssr.com",
+        "023168.xyz"
+        ],
+        "outbound": "Proxy"
+      },
+      {
+        "ip_cidr": [
+          "104.21.24.134/32",
+          "172.67.218.243/32"
         ],
         "outbound": "Proxy"
       },
