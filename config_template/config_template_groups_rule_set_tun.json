@@ -69,7 +69,7 @@
     {
       "type": "tun",
       "address": [
-        "192.38.0.1/16",
+        "172.19.0.1/30",
         "fdfe:dcba:9876::1/126"
       ],
       "mtu": 9000,
@@ -140,8 +140,8 @@
       "tag":"OpenAI",
       "type":"selector",
       "outbounds":[
-        "TaiWan",
         "Singapore",
+        "TaiWan",
         "Japan",
         "America",
         "Others",
@@ -152,9 +152,9 @@
       "tag":"Telegram",
       "type":"selector",
       "outbounds":[
+        "Singapore",
         "HongKong",
         "TaiWan",
-        "Singapore",
         "Japan",
         "America",
         "Others",
@@ -223,9 +223,9 @@
       "tag":"TikTok",
       "type":"selector",
       "outbounds":[
+        "Singapore",
         "HongKong",
         "TaiWan",
-        "Singapore",
         "Japan",
         "America",
         "IEPL"
@@ -261,28 +261,28 @@
       "tag":"Apple",
       "type":"selector",
       "outbounds":[
-        "direct",
         "HongKong",
         "TaiWan",
         "Singapore",
         "Japan",
         "America",
         "Others",
-        "IEPL"
+        "IEPL",
+        "direct"
       ]
     },
     {
       "tag":"Microsoft",
       "type":"selector",
       "outbounds":[
-        "direct",
         "HongKong",
         "TaiWan",
         "Singapore",
         "Japan",
         "America",
         "Others",
-        "IEPL"
+        "IEPL",
+        "direct"
       ]
     },
     {
