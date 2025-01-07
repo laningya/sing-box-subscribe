@@ -83,7 +83,7 @@
       "stack": "mixed",
       "platform": {
         "http_proxy": {
-          "enabled": true,
+          "enabled": false,
           "server": "0.0.0.0",
           "server_port": 2080
         }
