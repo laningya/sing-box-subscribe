@@ -616,6 +616,11 @@
               "023168.xyz",
               "bbbbbb.eu.org"
             ]
+          },
+          {
+            "package_name": [
+              "com.mb.android"
+            ]
           }
         ]
       },
