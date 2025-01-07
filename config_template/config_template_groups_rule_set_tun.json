@@ -40,13 +40,13 @@
     ],
     "rules": [
       {
-        "rule_set": "geosite-category-ads-all",
-        "server": "block"
-      },
-      {
         "outbound": "any",
         "server": "localDns",
         "disable_cache": true
+      },
+      {
+        "rule_set": "geosite-category-ads-all",
+        "server": "block"
       },
       {
         "rule_set": "geosite-cn",
@@ -66,7 +66,7 @@
       }
     ],
     "final": "localDns",
-    "strategy": "ipv4_only"
+    "strategy": "prefer_ipv4"
   },
   "inbounds": [
     {
