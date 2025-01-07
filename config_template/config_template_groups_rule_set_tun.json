@@ -483,22 +483,6 @@
         "outbound": "Proxy"
       },
       {
-        "domain_suffix": [
-        "023168.xyz",
-        "bbbbbb.eu.org"
-        ],
-        "outbound": "Magpie"
-      },
-      {
-        "ip_cidr": [
-          "104.21.24.134/32",
-          "172.67.218.243/32",
-          "2606:4700:3032::6815:1886/128",
-          "2606:4700:3037::ac43:daf3/128"
-        ],
-        "outbound": "Magpie"
-      },
-      {
         "domain": [
           "clash.razord.top",
           "yacd.metacubex.one",
@@ -510,6 +494,10 @@
       {
         "ip_is_private": true,
         "outbound": "direct"
+      },
+      {
+        "rule_set": "Magpie-site",
+        "outbound": "Magpie"
       },
       {
         "rule_set": "geosite-openai",
@@ -589,6 +577,18 @@
       }
     ],
     "rule_set": [
+      {
+        "tag": "Magpie-site",
+        "type": "inline",
+        "rules": [
+          {
+            "domain_suffix": [
+              "023168.xyz",
+              "bbbbbb.eu.org"
+            ]
+          }
+        ]
+      },
       {
         "tag": "geosite-category-ads-all",
         "type": "remote",
