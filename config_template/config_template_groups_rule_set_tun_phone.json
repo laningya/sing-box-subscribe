@@ -596,7 +596,8 @@
         "rules": [
           {
             "domain_suffix": [
-              "023168.xyz"
+              "023168.xyz",
+              "vban.xyz"
             ]
           }
         ]
