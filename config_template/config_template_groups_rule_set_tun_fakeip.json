@@ -128,7 +128,7 @@
       "users": []
     }
   ],
-  "outbounds": [
+"outbounds": [
     {
       "tag":"Proxy",
       "type":"selector",
@@ -203,6 +203,72 @@
       ]
     },
     {
+      "tag":"Magpie",
+      "type":"selector",
+      "outbounds":[
+        "{all}",
+        "auto",
+        "direct"
+      ]
+    },
+    {
+      "tag":"Micu",
+      "type":"selector",
+      "outbounds":[
+        "{all}",
+        "auto",
+        "direct"
+      ]
+    },
+    {
+      "tag":"Netflix",
+      "type":"selector",
+      "outbounds":[
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others",
+        "IEPL"
+      ]
+    },
+    {
+      "tag":"Disney+",
+      "type":"selector",
+      "outbounds":[
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others",
+        "IEPL"
+      ]
+    },
+    {
+      "tag":"TikTok",
+      "type":"selector",
+      "outbounds":[
+        "Singapore",
+        "HongKong",
+        "TaiWan",
+        "Japan",
+        "America",
+        "IEPL"
+      ]
+    },
+    {
+      "tag":"BiliBili",
+      "type":"selector",
+      "outbounds":[
+        "direct",
+        "HongKong",
+        "TaiWan",
+        "IEPL"
+      ]
+    },
+    {
       "tag":"Twitter",
       "type":"selector",
       "outbounds":[
@@ -229,16 +295,6 @@
       ]
     },
     {
-      "tag":"BiliBili",
-      "type":"selector",
-      "outbounds":[
-        "direct",
-        "HongKong",
-        "TaiWan",
-        "IEPL"
-      ]
-    },
-    {
       "tag":"Bahamut",
       "type":"selector",
       "outbounds":[
@@ -249,44 +305,6 @@
     },
     {
       "tag":"Spotify",
-      "type":"selector",
-      "outbounds":[
-        "HongKong",
-        "TaiWan",
-        "Singapore",
-        "Japan",
-        "America",
-        "Others",
-        "IEPL"
-      ]
-    },
-    {
-      "tag":"TikTok",
-      "type":"selector",
-      "outbounds":[
-        "Singapore",
-        "HongKong",
-        "TaiWan",
-        "Japan",
-        "America",
-        "IEPL"
-      ]
-    },
-    {
-      "tag":"Netflix",
-      "type":"selector",
-      "outbounds":[
-        "HongKong",
-        "TaiWan",
-        "Singapore",
-        "Japan",
-        "America",
-        "Others",
-        "IEPL"
-      ]
-    },
-    {
-      "tag":"Disney+",
       "type":"selector",
       "outbounds":[
         "HongKong",
@@ -351,15 +369,6 @@
         "America",
         "Others",
         "IEPL"
-      ]
-    },
-    {
-      "tag":"Magpie",
-      "type":"selector",
-      "outbounds":[
-        "{all}",
-        "auto",
-        "direct"
       ]
     },
     {
@@ -531,6 +540,10 @@
         "outbound": "Magpie"
       },
       {
+        "rule_set": "Micu-site",
+        "outbound": "Micu"
+      },
+      {
         "rule_set": "geosite-openai",
         "outbound": "OpenAI"
       },
@@ -614,13 +627,18 @@
         "rules": [
           {
             "domain_suffix": [
-              "023168.xyz",
-              "bbbbbb.eu.org"
+              "023168.xyz"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "tag": "Micu-site",
+        "type": "inline",
+        "rules": [
           {
-            "package_name": [
-              "com.mb.android"
+            "domain_suffix": [
+              "micu.hk"
             ]
           }
         ]
