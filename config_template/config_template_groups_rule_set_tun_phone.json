@@ -184,9 +184,9 @@
       "tag":"Micu",
       "type":"selector",
       "outbounds":[
+        "direct",
         "{all}",
-        "auto",
-        "direct"
+        "auto"
       ]
     },
     {
