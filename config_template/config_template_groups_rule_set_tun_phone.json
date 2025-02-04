@@ -492,6 +492,15 @@
         "outbound": "Proxy"
       },
       {
+         "ip_cidr": [
+          "46.3.107.144/32",
+          "103.135.101.242/32",
+          "47.76.71.191/32",
+          "103.216.253.16/32"
+      ],
+        "outbound": "direct"
+      },
+      {
         "domain": [
           "clash.razord.top",
           "yacd.metacubex.one",
