@@ -24,13 +24,13 @@
       {
         "tag": "proxyDns",
         "address": "tls://8.8.8.8",
-        "strategy": "ipv4_only",
+        "strategy": "prefer_ipv4",
         "detour": "Proxy"
       },
       {
         "tag": "localDns",
         "address": "https://223.5.5.5/dns-query",
-        "strategy": "ipv4_only",
+        "strategy": "prefer_ipv4",
         "detour": "direct"
       },
       {
@@ -66,7 +66,7 @@
       }
     ],
     "final": "localDns",
-    "strategy": "ipv4_only"
+    "strategy": "prefer_ipv4",
   },
   "inbounds": [
     {
