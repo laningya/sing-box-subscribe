@@ -32,10 +32,6 @@
         "address": "https://223.5.5.5/dns-query",
         "strategy": "prefer_ipv4",
         "detour": "direct"
-      },
-      {
-        "tag": "block",
-        "address": "rcode://success"
       }
     ],
     "rules": [
@@ -46,7 +42,8 @@
       },
       {
         "rule_set": "geosite-category-ads-all",
-        "server": "block"
+        "action": "reject",
+        "method": "drop"
       },
       {
         "rule_set": "geosite-cn",
@@ -71,6 +68,7 @@
   "inbounds": [
     {
       "type": "tun",
+      "tag": "tun-in",
       "address": [
         "172.19.0.1/30",
         "fdfe:dcba:9876::1/126"
@@ -78,7 +76,6 @@
       "mtu": 9000,
       "auto_route": true,
       "strict_route": true,
-      "sniff": true,
       "endpoint_independent_nat": false,
       "stack": "mixed",
       "platform": {
@@ -91,13 +88,13 @@
     },
     {
       "type": "mixed",
+      "tag": "mixed-in",
       "listen": "0.0.0.0",
       "listen_port": 2080,
-      "sniff": true,
       "users": []
     }
   ],
-"outbounds": [
+  "outbounds": [
     {
       "tag":"Proxy",
       "type":"selector",
@@ -105,6 +102,9 @@
         "{all}",
         "auto",
         "direct"
+      ],
+      "filter":[
+        {"action":"exclude","keywords":["网站|地址|剩余|过期|到期|时间|有效"]}
       ]
     },
     {
@@ -350,14 +350,6 @@
       ]
     },
     {
-      "tag":"AdBlock",
-      "type":"selector",
-      "outbounds":[
-        "block",
-        "direct"
-      ]
-    },
-    {
       "tag":"IEPL",
       "type":"selector",
       "outbounds":[
@@ -434,7 +426,7 @@
         "{all}"
       ],
       "filter":[
-        {"action":"exclude","keywords":["网站|地址|剩余|过期|时间|有效"]}
+        {"action":"exclude","keywords":["网站|地址|剩余|过期|到期|时间|有效"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
@@ -443,14 +435,6 @@
     {
       "type": "direct",
       "tag": "direct"
-    },
-    {
-      "type": "dns",
-      "tag": "dns-out"
-    },
-    {
-      "type": "block",
-      "tag": "block"
     }
   ],
   "route": {
@@ -458,21 +442,21 @@
     "final": "Proxy",
     "rules": [
       {
-        "type": "logical",
-        "mode": "or",
-        "rules":[
-          {
-            "port":53
-          },
-          {
-            "protocol": "dns"
-          }
-        ],
-        "outbound": "dns-out"
+        "inbound": "tun-in",
+        "action": "sniff"
+      },
+      {
+        "inbound": "mixed-in",
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
       },
       {
         "rule_set": "geosite-category-ads-all",
-        "outbound": "AdBlock"
+        "action": "reject",
+        "method": "drop"
       },
       {
         "clash_mode": "direct",
@@ -502,7 +486,8 @@
           "clash.razord.top",
           "yacd.metacubex.one",
           "yacd.haishan.me",
-          "d.metacubex.one"
+          "d.metacubex.one",
+          "888679.xyz"
         ],
         "outbound": "direct"
       },
