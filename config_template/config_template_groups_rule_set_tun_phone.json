@@ -492,8 +492,7 @@
           "clash.razord.top",
           "yacd.metacubex.one",
           "yacd.haishan.me",
-          "d.metacubex.one",
-          "888679.xyz"
+          "d.metacubex.one"
         ],
         "outbound": "direct"
       },
@@ -591,6 +590,10 @@
         "tag": "Magpie-site",
         "type": "inline",
         "rules": [
+      {
+        "tag": "Magpie-site",
+        "type": "inline",
+        "rules": [
           {
             "domain_suffix": [
               "023168.xyz",
@@ -598,7 +601,10 @@
               "niceduck.lol",
               "xmsl.org",
               "emby.moe"
-            ]
+            ],
+            "ip_cidr": [
+               "142.171.168.229/32"
+             ]
           }
         ]
       },
