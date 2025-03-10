@@ -590,10 +590,6 @@
         "tag": "Magpie-site",
         "type": "inline",
         "rules": [
-      {
-        "tag": "Magpie-site",
-        "type": "inline",
-        "rules": [
           {
             "domain_suffix": [
               "023168.xyz",
@@ -603,8 +599,11 @@
               "emby.moe"
             ],
             "ip_cidr": [
-               "142.171.168.229/32"
-             ]
+              "142.171.168.229/32"
+            ],
+            "domain": [
+              "magpie.610524.xyz"
+            ]
           }
         ]
       },
