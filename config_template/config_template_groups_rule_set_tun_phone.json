@@ -599,11 +599,13 @@
               "embymv.link",
               "zox.show",
               "as174.de",
-              "emby.moe"
+              "emby.moe",
+              "yunti.online"
             ],
             "ip_cidr": [
               "142.171.168.229/32",
-              "152.53.81.68/32"
+              "152.53.81.68/32",
+              "65.21.206.96/32"
             ],
             "domain": [
               "magpie.610524.xyz",
