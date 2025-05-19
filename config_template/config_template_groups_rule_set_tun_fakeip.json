@@ -515,8 +515,15 @@
         "outbound": "Proxy"
       },
       {
+        "domain_suffix": [
+        "spender.men"
+        ],
+        "outbound": "direct"
+      },
+      {
          "ip_cidr": [
-          "46.3.107.144/32"
+          "46.3.107.144/32",
+          "172.245.110.101/32"
       ],
         "outbound": "direct"
       },
