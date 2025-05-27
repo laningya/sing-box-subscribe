@@ -473,6 +473,12 @@
         "outbound": "Proxy"
       },
       {
+        "protocol": [
+          "ssh"
+        ],
+        "outbound": "direct"
+      },
+      {
         "domain_suffix": [
         "redotpay.com",
         "nodeseek.com",
