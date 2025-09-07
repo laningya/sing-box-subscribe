@@ -190,7 +190,19 @@
         "Others",
         "IEPL"
       ]
-    },
+    },    
+    {
+      "tag":"Claude",
+      "type":"selector",
+      "outbounds":[
+        "America",
+        "Singapore",
+        "TaiWan",
+        "Japan",
+        "Others",
+        "IEPL"
+      ]
+    },  
     {
       "tag":"Telegram",
       "type":"selector",
@@ -556,6 +568,10 @@
         "outbound": "Micu"
       },
       {
+        "rule_set": "Claude-site",
+        "outbound": "Claude"
+      },      
+      {
         "rule_set": "geosite-openai",
         "outbound": "OpenAI"
       },
@@ -647,6 +663,13 @@
         "url": "https://raw.githubusercontent.com/laningya/Raspberry-Pi/refs/heads/master/unemby.json",
         "download_detour": "Proxy"
       },
+      {
+        "tag": "Claude-site",
+        "type": "remote",
+        "format": "source",
+        "url": "https://raw.githubusercontent.com/laningya/Raspberry-Pi/refs/heads/master/claude.json",
+        "download_detour": "Proxy"
+      },      
       {
         "tag": "geosite-category-ads-all",
         "type": "remote",
