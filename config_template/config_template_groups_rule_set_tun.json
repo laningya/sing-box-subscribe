@@ -172,6 +172,18 @@
       ]
     },
     {
+      "tag":"Gemini",
+      "type":"selector",
+      "outbounds":[
+        "America",
+        "Singapore",
+        "TaiWan",
+        "Japan",
+        "Others",
+        "IEPL"
+      ]
+    },
+    {
       "tag":"Telegram",
       "type":"selector",
       "outbounds":[
@@ -540,6 +552,10 @@
         "outbound": "Claude"
       },
       {
+        "rule_set": "Gemini-site",
+        "outbound": "Gemini"
+      },
+      {
         "rule_set": "geosite-openai",
         "outbound": "OpenAI"
       },
@@ -636,6 +652,13 @@
         "type": "remote",
         "format": "source",
         "url": "https://raw.githubusercontent.com/laningya/Raspberry-Pi/refs/heads/master/claude.json",
+        "download_detour": "Proxy"
+      },
+      {
+        "tag": "Gemini-site",
+        "type": "remote",
+        "format": "source",
+        "url": "https://raw.githubusercontent.com/laningya/Raspberry-Pi/refs/heads/master/gemini.json",
         "download_detour": "Proxy"
       },
       {
