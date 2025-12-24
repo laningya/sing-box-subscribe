@@ -9,7 +9,7 @@ requests = "*"
 paramiko = "*"
 scp = "*"
 chardet = "*"
-PyYAML = "*"
+pyyaml = "*"
 "ruamel.yaml" = "*"
  
 [requires]
