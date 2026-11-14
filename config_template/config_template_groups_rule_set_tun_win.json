@@ -103,12 +103,11 @@
       "type":"selector",
       "outbounds":[
         "HongKong",
-        "TaiWan",
         "Singapore",
-        "Japan",
         "America",
+        "UnitedKingdom",
         "Others",
-        "IEPL"
+        "IX"
       ]
     },
     {
@@ -116,12 +115,11 @@
       "type":"selector",
       "outbounds":[ 
         "HongKong",
-        "TaiWan",
         "Singapore",
-        "Japan",
         "America",
+        "UnitedKingdom",
         "Others",
-        "IEPL"
+        "IX"
       ]
     },
     {
@@ -129,12 +127,11 @@
       "type":"selector",
       "outbounds":[ 
         "HongKong",
-        "TaiWan",
         "Singapore",
-        "Japan",
         "America",
+        "UnitedKingdom",
         "Others",
-        "IEPL"
+        "IX"
       ]
     },
     {
@@ -165,11 +162,10 @@
       "outbounds":[
         "Singapore",
         "HongKong",
-        "TaiWan",
-        "Japan",
         "America",
+        "UnitedKingdom",
         "Others",
-        "IEPL"
+        "IX"
       ]
     },
     {
@@ -201,12 +197,11 @@
       "type":"selector",
       "outbounds":[
         "HongKong",
-        "TaiWan",
         "Singapore",
-        "Japan",
         "America",
+        "UnitedKingdom",
         "Others",
-        "IEPL"
+        "IX"
       ]
     },
     {
@@ -214,12 +209,11 @@
       "type":"selector",
       "outbounds":[
         "HongKong",
-        "TaiWan",
         "Singapore",
-        "Japan",
         "America",
+        "UnitedKingdom",
         "Others",
-        "IEPL"
+        "IX"
       ]
     },
     {
@@ -228,10 +222,9 @@
       "outbounds":[
         "Singapore",
         "HongKong",
-        "TaiWan",
-        "Japan",
         "America",
-        "IEPL"
+        "UnitedKingdom",
+        "IX"
       ]
     },
     {
@@ -240,8 +233,7 @@
       "outbounds":[
         "direct",
         "HongKong",
-        "TaiWan",
-        "IEPL"
+        "IX"
       ]
     },
     {
@@ -249,12 +241,11 @@
       "type":"selector",
       "outbounds":[
         "HongKong",
-        "TaiWan",
         "Singapore",
-        "Japan",
         "America",
+        "UnitedKingdom",
         "Others",
-        "IEPL"
+        "IX"
       ]
     },
     {
@@ -262,21 +253,19 @@
       "type":"selector",
       "outbounds":[
         "HongKong",
-        "TaiWan",
         "Singapore",
-        "Japan",
         "America",
+        "UnitedKingdom",
         "Others",
-        "IEPL"
+        "IX"
       ]
     },
     {
       "tag":"Bahamut",
       "type":"selector",
       "outbounds":[
-        "TaiWan",
         "Proxy",
-        "IEPL"
+        "IX"
       ]
     },
     {
@@ -284,12 +273,11 @@
       "type":"selector",
       "outbounds":[
         "HongKong",
-        "TaiWan",
         "Singapore",
-        "Japan",
         "America",
+        "UnitedKingdom",
         "Others",
-        "IEPL"
+        "IX"
       ]
     },
     {
@@ -297,12 +285,11 @@
       "type":"selector",
       "outbounds":[
         "HongKong",
-        "TaiWan",
         "Singapore",
-        "Japan",
         "America",
+        "UnitedKingdom",
         "Others",
-        "IEPL",
+        "IX",
         "direct"
       ]
     },
@@ -311,12 +298,11 @@
       "type":"selector",
       "outbounds":[
         "HongKong",
-        "TaiWan",
         "Singapore",
-        "Japan",
         "America",
+        "UnitedKingdom",
         "Others",
-        "IEPL",
+        "IX",
         "direct"
       ]
     },
@@ -326,12 +312,11 @@
       "outbounds":[
         "direct",
         "HongKong",
-        "TaiWan",
         "Singapore",
-        "Japan",
         "America",
+        "UnitedKingdom",
         "Others",
-        "IEPL"
+        "IX"
       ]
     },
     {
@@ -339,12 +324,11 @@
       "type":"selector",
       "outbounds":[
         "HongKong",
-        "TaiWan",
         "Singapore",
-        "Japan",
         "America",
+        "UnitedKingdom",
         "Others",
-        "IEPL"
+        "IX"
       ]
     },
     {
@@ -353,17 +337,17 @@
       "outbounds":[
         "direct",
         "Proxy",
-        "IEPL"
+        "IX"
       ]
     },
     {
-      "tag":"IEPL",
+      "tag":"IX",
       "type":"selector",
       "outbounds":[
         "{all}"
       ],
       "filter":[
-        {"action":"include","keywords":["iepl|IEPL"]}
+        {"action":"include","keywords":["ix|IX"]}
       ]
     },
     {
@@ -377,16 +361,6 @@
       ]
     },
     {
-      "tag":"TaiWan",
-      "type":"selector",
-      "outbounds":[
-        "{all}"
-      ],
-      "filter":[
-        {"action":"include","keywords":["🇹🇼|TW|tw|台湾|臺灣|台|Taiwan"]}
-      ]
-    },
-    {
       "tag":"Singapore",
       "type":"selector",
       "outbounds":[
@@ -394,16 +368,6 @@
       ],
       "filter":[
         {"action":"include","keywords":["🇸🇬|SG|sg|新加坡|狮|Singapore"]}
-      ]
-    },
-    {
-      "tag":"Japan",
-      "type":"selector",
-      "outbounds":[
-        "{all}"
-      ],
-      "filter":[
-        {"action":"include","keywords":["🇯🇵|JP|jp|日本|日|Japan"]}
       ]
     },
     {
@@ -417,13 +381,23 @@
       ]
     },
     {
+      "tag":"UnitedKingdom",
+      "type":"selector",
+      "outbounds":[
+        "{all}"
+      ],
+      "filter":[
+        {"action":"include","keywords":["🇬🇧|UK|uk|GB|gb|英国|英國|United Kingdom|UnitedKingdom|Britain|London|伦敦|倫敦"]}
+      ]
+    },
+    {
       "tag":"Others",
       "type":"selector",
       "outbounds":[
         "{all}"
       ],
       "filter":[
-        {"action":"exclude","keywords":["🇭🇰|HK|hk|香港|香|🇹🇼|TW|tw|台湾|台|🇸🇬|SG|sg|新加坡|狮|🇯🇵|JP|jp|日本|日|🇺🇸|US|us|美国|美|iepl|IEPL"]}
+        {"action":"exclude","keywords":["🇭🇰|HK|hk|香港|香|🇸🇬|SG|sg|新加坡|狮|🇺🇸|US|us|美国|美|🇬🇧|UK|uk|GB|gb|英国|英國|United Kingdom|UnitedKingdom|Britain|London|伦敦|倫敦|ix|IX"]}
       ]
     },
     {
