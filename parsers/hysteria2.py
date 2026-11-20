@@ -1,20 +1,55 @@
-import tool,re
+import re
 from urllib.parse import urlparse, parse_qs, unquote
 
+import tool
+
+
+def _parse_port_ranges(value):
+    ranges = []
+    for item in value.split(','):
+        match = re.fullmatch(r'([0-9]{1,5})(?:\s*[-:]\s*([0-9]{1,5}))?', item.strip())
+        if not match:
+            return []
+        start = int(match[1])
+        end = int(match[2]) if match[2] else start
+        if not 1 <= start <= end <= 65535:
+            return []
+        ranges.append(f'{start}:{end}')
+    return ranges
+
+
 def parse(data):
-    info = data[:]
-    server_info = urlparse(info)
+    server_info = urlparse(data)
+    query = parse_qs(server_info.query)
     netquery = dict(
         (k, v if len(v) > 1 else v[0])
-        for k, v in parse_qs(server_info.query).items()
+        for k, v in query.items()
     )
-    if server_info.path:
-      server_info = server_info._replace(netloc=server_info.netloc + server_info.path, path="")
+    authority = server_info.netloc.rsplit('@', 1)[-1]
+    address = re.fullmatch(r'(\[[^\]]+\]|[^:\[\]]+)(?::(.*))?', authority)
+    if not address:
+        return None
+    host, port_spec = address.groups()
+    port_spec = (port_spec or '443').strip()
+
+    # Prefer the subscription's hopping range over its advertised single port.
+    server_ports = _parse_port_ranges(','.join(query.get('mport', [])))
+    if server_ports:
+        port_options = {'server_ports': server_ports, 'hop_interval': '30s'}
+    else:
+        server_ports = _parse_port_ranges(port_spec)
+        if not server_ports:
+            return None
+        if port_spec.isdecimal():
+            port_options = {'server_port': int(port_spec)}
+        else:
+            port_options = {'server_ports': server_ports, 'hop_interval': '30s'}
+
     node = {
         'tag': unquote(server_info.fragment) or tool.genName()+'_hysteria2',
         'type': 'hysteria2',
-        'server': re.sub(r"\[|\]", "", server_info.netloc.split("@")[-1].rsplit(":", 1)[0]),
-        'server_port': int(re.search(r'\d+', server_info.netloc.rsplit(":", 1)[-1].split(",")[0]).group()),
+        'server': host.strip('[]'),
+        **port_options,
         "password": netquery['auth'] if netquery.get('auth') else server_info.netloc.split("@")[0].rsplit(":", 1)[-1],
         'up_mbps': int(re.search(r'\d+', netquery.get('upmbps', '10')).group()),
         'down_mbps': int(re.search(r'\d+', netquery.get('downmbps', '100')).group()),

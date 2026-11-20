@@ -27,7 +27,7 @@
       },
       {
         "type": "https",
-        "tag": "local",
+        "tag": "localDns",
         "server": "223.5.5.5",
         "path": "/dns-query"
       },
@@ -46,7 +46,7 @@
       },
       {
         "clash_mode": "direct",
-        "server": "local"
+        "server": "localDns"
       },
       {
         "clash_mode": "global",
@@ -62,7 +62,7 @@
       },
       {
         "rule_set": "geosite-cn",
-        "server": "local"
+        "server": "localDns"
       },
       {
         "rule_set": "geosite-geolocation-!cn",
@@ -459,7 +459,7 @@
     "final": "Proxy",
     "default_http_client": "rule-download",
     "default_domain_resolver": {
-      "server": "local",
+      "server": "localDns",
       "disable_cache": true
     },
     "rules": [
