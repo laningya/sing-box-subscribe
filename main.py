@@ -63,27 +63,6 @@ def process_subscribes(subscribes):
     return nodes
 
 
-def add_node_domain_resolvers(config, nodes):
-    # Apply to templates with the new DNS server format and a localDns server.
-    dns_servers = config.get('dns', {}).get('servers', [])
-    if not any(server.get('tag') == 'localDns' and server.get('type') not in (None, '', 'legacy')
-               for server in dns_servers):
-        return
-
-    proxy_types = {
-        'anytls', 'http', 'hysteria', 'hysteria2', 'naive', 'shadowsocks', 'shadowtls',
-        'snell', 'socks', 'ssh', 'trojan', 'tuic', 'vless', 'vmess', 'wireguard',
-    }
-    for group in nodes.values():
-        for node in group:
-            if node.get('type') in proxy_types:
-                node['domain_resolver'] = {
-                    'server': 'localDns',
-                    'strategy': 'prefer_ipv4',
-                    'disable_cache': True,
-                }
-
-
 def nodes_filter(nodes, filter, group):
     for a in filter:
         if a.get('for') and group not in a['for']:
@@ -624,7 +603,6 @@ if __name__ == '__main__':
         # print ('Mẫu cấu hình sử dụng: \033[33m' + template_list[uip] + '.json\033[0m')
         config = load_json(config_template_path)
     nodes = process_subscribes(providers["subscribes"])
-    add_node_domain_resolvers(config, nodes)
     if providers.get('Only-nodes'):
         combined_contents = []
         for sub_tag, contents in nodes.items():

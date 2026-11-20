@@ -411,8 +411,9 @@
     "final": "Proxy",
     "default_http_client": "rule-download",
     "default_domain_resolver": {
-    "server": "localDns",
-    "disable_cache": true
+      "server": "localDns",
+      "strategy": "prefer_ipv6",
+      "disable_cache": true
     },
     "rules": [
       {

@@ -430,6 +430,7 @@
     "default_http_client": "rule-download",
     "default_domain_resolver": {
       "server": "localDns",
+      "strategy": "prefer_ipv6",
       "disable_cache": true
     },
     "rules": [
